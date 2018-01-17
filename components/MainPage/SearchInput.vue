@@ -1,6 +1,6 @@
 <template>
     <div class="w-100">
-        <b-input class="w-100" :placeholder="searchInput"></b-input>
+        <b-input class="w-100 ph-font" :placeholder="searchInput"></b-input>
     </div>
 </template>
 
@@ -20,6 +20,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  .ph-font{
+    font-size: 12px;
+  }
 </style>
