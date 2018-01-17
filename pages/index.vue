@@ -1,15 +1,14 @@
 <template>
   <section class="container mb-5">
     <div>
-      <search-container title="جستجوی فلان و بیسار و اینا"></search-container>
+      <search-container title="جستجوی فلان و بیسار و اینا" :img="homepageData.searchBackground"></search-container>
       <static-banner :title="homepageData.staticBannerTitle" 
                      :subTitle="homepageData.staticBannerSubTitle" 
                      :img="homepageData.staticBanner" 
                      :color="homepageData.staticBannerBackColor"
                      :textColor="homepageData.staticBannerTextColor">
       </static-banner>
-      <movie-carousel title="داغ‌ترین‌ها"></movie-carousel>
-      {{homepageData}}
+      <movie-carousel title="داغ‌ترین‌ها" :movies="homepageData.hottestMovies"></movie-carousel>
     </div>
   </section>
 </template>

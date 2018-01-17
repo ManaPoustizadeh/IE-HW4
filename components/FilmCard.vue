@@ -5,7 +5,7 @@
         <div class="film-card-bottom" :style="{backgroundColor: colorBottom}">
         </div>
         <div class="container film-container">
-            <img src="~/assets/img/poster.jpg" alt="" height="220px" class="thumbnail w-100">
+            <img :src="thumbnail" alt="" height="220px" class="thumbnail w-100">
             <div class="d-flex w-100 justify-content-center align-items-center mt-2">
                 <span v-for="genre in genres" :key="genre" class="badge badge-light p-1 w-100">{{genre}}</span>
             </div>
@@ -43,7 +43,7 @@ export default {
         genres: {
             type: Array,
         },
-        img: {
+        thumbnail: {
             type: String,
         },
         quality: {
@@ -56,7 +56,7 @@ export default {
             type: String,
         },
         year: {
-            type: String,
+            type: Number,
         }
     },
     components: {

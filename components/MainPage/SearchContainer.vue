@@ -1,6 +1,6 @@
 <template>
     <!-- This is the overview of the structure -->
-    <div class="container search-container row text-center w-100 justify-content-center align-items-center bg-danger">
+    <div class="container search-container row text-center w-100 justify-content-center align-items-center bg-danger" :style="{background: `url(${img})`}">
         <!-- give it the needed props and stuff -->
         <div class="text-center">
             <span class="input-title w-100">

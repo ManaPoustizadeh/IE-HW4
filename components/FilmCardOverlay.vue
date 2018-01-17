@@ -37,7 +37,7 @@ export default {
             type: String,
         },
         year: {
-            type: String,
+            type: Number,
         },
         downloadLink: {
             type: String,

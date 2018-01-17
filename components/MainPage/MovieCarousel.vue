@@ -9,12 +9,14 @@
             <hr class="w-100 mt-1">
         </div>
 
-        <film-card v-for="film in films" 
-                   :key="film.name" 
-                   :name="film.name"
-                   :genres="film.genres"
-                   :quality="film.quality"
-                   :rate="film.rate" >
+        <film-card v-for="movie in movies" 
+                   :key="movie.id" 
+                   :name="movie.title"
+                   :genres="movie.genres"
+                   :quality="movie.quality"
+                   :rate="movie.rate"
+                   :year="movie.year"
+                   :thumbnail="movie.thumbnail" >
 
         </film-card>
     </div>
@@ -69,6 +71,9 @@ export default {
     props: {
         title: {
             type: String, 
+        },
+        movies: {
+            type: Array,
         }
     }
 }
