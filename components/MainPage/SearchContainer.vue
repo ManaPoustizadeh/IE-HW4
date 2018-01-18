@@ -15,11 +15,9 @@
                 </b-button>
                 <search-input searchInput="جستجوی فلان بیسار"></search-input>
             </div>
-
             <!-- and heres the main search button -->
             <b-button class="border-0 p-1 pl-5 pr-5 bg-warning pull-left">جستجو</b-button>
         </div>
-
     </div>
 </template>
 
@@ -57,11 +55,11 @@ export default {
     background-color: #584a7b;
   }
 
-  .search-button{
+  .form-button{
     background-color: #59ad79;
   }
 
-  .search-button:hover .zoom-button:hover{
+  .form-button:hover .zoom-button:hover{
     opacity: 70;
   }
 
