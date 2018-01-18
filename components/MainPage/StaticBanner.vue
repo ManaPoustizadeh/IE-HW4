@@ -1,5 +1,5 @@
 <template>
-    <div class="container banner-container row text-right w-100 justify-content-start align-items-start" :style="{backgroundColor: color}">
+    <div class="container banner-container row text-right w-100 justify-content-start align-items-start" :style="{backgroundColor: color, color: textColor}">
         <div class="mt-5 mr-3 position-absolute text-white">
             <h3>
                 {{title}}
@@ -36,7 +36,10 @@ export default {
         }, 
         subTitle: {
             type: String, 
-        } 
+        },
+        textColor: {
+            type: String,
+        }
     }
 }
 </script>

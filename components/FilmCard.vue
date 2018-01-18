@@ -1,11 +1,12 @@
 <template>
-    <div class="film-card text-center d-flex flex-wrap align-items-center justify-content-center">
+    <nuxt-link :to="'/movie/'+id">
+    <div class="film-card text-center d-flex flex-wrap align-items-center justify-content-center" v-on:mouseenter="overlay" v-on:mouseleave="overlay">
         <div class="film-card-top align-self-start" :style="{backgroundColor: colorTop}">
         </div>
         <div class="film-card-bottom" :style="{backgroundColor: colorBottom}">
         </div>
         <div class="container film-container">
-            <img src="~/assets/img/poster.jpg" alt="" height="220px" class="thumbnail w-100">
+            <img :src="thumbnail" alt="" height="220px" class="thumbnail w-100">
             <div class="d-flex w-100 justify-content-center align-items-center mt-2">
                 <span v-for="genre in genres" :key="genre" class="badge badge-light p-1 w-100">{{genre}}</span>
             </div>
@@ -17,8 +18,11 @@
                 <span class="badge p-1 w-100 film-quality rounded mr-1">{{quality}}</span>
             </div>
         </div>
-        <film-card-overlay :title="name" :translate="translate" :year="year" ></film-card-overlay>
+        <transition name="fade" class="fade-enter-active fade-leave-active">
+          <film-card-overlay class="overlay" v-if="seen" :title="name" :translate="translate" :year="year" ></film-card-overlay>
+        </transition>
     </div>
+    </nuxt-link>
 </template>
 
 <script>
@@ -27,36 +31,46 @@ export default {
     data() {
         let colorTop = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
         let colorBottom = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+        let seen = false;
         return {
-            colorTop, 
+            colorTop,
             colorBottom,
+            seen
         }
-    }, 
+    },
     props: {
+        id: {
+            type: String,
+        },
         name: {
             type: String,
         },
         genres: {
             type: Array,
         },
-        img: {
+        thumbnail: {
             type: String,
         },
         quality: {
             type: String,
         },
         rate: {
-            type: Number,   
+            type: Number,
         },
         translate: {
-            type: String, 
+            type: String,
         },
         year: {
-            type: String,
+            type: Number,
         }
     },
     components: {
         FilmCardOverlay,
+    },
+    methods:{
+        overlay: function () {
+            this.seen = !this.seen;
+        }
     }
 }
 </script>
