@@ -94,15 +94,34 @@
         "DVDScr"
         ],
         "availableDownloadResolutions": [
-        "720p",
-        "1080p"
+            {
+                "name": "720p",
+                "size": "800 Mb",
+                "encoder": "Ganool",
+                "language": "زبان اصلی",
+                "codec": "x264"
+            },
+            {
+                "name": "1080p",
+                "size": "1.3 Gb",
+                "encoder": "Ganool",
+                "language": "زبان اصلی",
+                "codec": "x264"
+            },
+            {
+                "name": "1080p",
+                "size": "1.1 Gb",
+                "encoder": "Ganool",
+                "language": "زبان اصلی",
+                "codec": "x265"
+            }            
         ]
     },
     {
         "id": 2,
         "imdbID": "tt1615160",
         "PersianSummary": "صاحب یک رستوران به نام کوآن پس از اینکه فرزندش در یک بمب‌گذاری دلخراش کشته می‌شود، تصمیم می‌گیرد از افرادی که باعت مرگ فرزندش شده‌اند، انتقام بگیرد ...",
-        "downloadRate": 8,
+        "downloadRate": 6,
         "totalVotes": 36,
         "positiveVotes": 34,
         "availableDownloadLanguages": [
@@ -113,8 +132,28 @@
             "DVDScr"
         ],
         "availableDownloadResolutions": [
-            "480p",
-            "360p"
+            {
+                "name": "360p",
+                "size": "400 Mb",
+                "encoder": "Ganool",
+                "language": "دوبله فارسی",
+                "codec": "x264"
+            },
+            {
+                "name": "480p",
+                "size": "600 Mb",
+                "encoder": "Ganool",
+                "language": "زبان اصلی",
+                "codec": "x264"
+            },
+            {
+                "name": "1080p",
+                "size": "1.1 Gb",
+                "encoder": "Ganool",
+                "language": "زبان اصلی",
+                "codec": "x265"
+            }
+
         ]
     }
 ],
