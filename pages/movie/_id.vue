@@ -1,11 +1,26 @@
 <template>
-  <div>Hello</div>
+  <comment :directorScore="4"
+           :writingScore="7"
+           :actingScore="8"
+           :userName="'manaaa'"
+           :text="'انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود '"
+           :upVoteCount="31"
+           :date="'7 تیر سال فلان'"
+           :recommend="'فیلم را پیشنهاد میکنم'"
+           :downVoteCount="1"></comment>
 </template>
 
 <script>
-
+import Comment from '~/components/MoviePage/Comment.vue';
 export default {
+  data() {
+    return {
 
+    }
+  },
+  components:{
+      Comment
+  }
 }
 </script>
     data() {

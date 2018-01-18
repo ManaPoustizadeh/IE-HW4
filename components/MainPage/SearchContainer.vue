@@ -7,7 +7,7 @@
                 {{title}}
             </span>
             <div class="d-flex w-100 mb-2 mt-1 main-center">
-                <b-button class="rounded-circle border-0 gas ml-2 text-white search-button">
+                <b-button class="rounded-circle border-0 gas ml-2 text-white form-button">
                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                 </b-button>
                 <b-button class="rounded-circle border-0 gas ml-2 text-white zoom-button">
