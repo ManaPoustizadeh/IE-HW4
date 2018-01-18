@@ -8,9 +8,10 @@
             </span>
             <hr class="w-100 mt-1">
         </div>
-
+        
         <film-card v-for="movie in movies" 
                    :key="movie.id" 
+                   :id="movie.id"
                    :name="movie.title"
                    :genres="movie.genres"
                    :quality="movie.quality"

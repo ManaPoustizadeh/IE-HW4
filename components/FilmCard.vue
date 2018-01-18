@@ -1,4 +1,5 @@
 <template>
+    <nuxt-link :to="'/movie/'+id">
     <div class="film-card text-center d-flex flex-wrap align-items-center justify-content-center" v-on:mouseenter="overlay" v-on:mouseleave="overlay">
         <div class="film-card-top align-self-start" :style="{backgroundColor: colorTop}">
         </div>
@@ -21,6 +22,7 @@
           <film-card-overlay class="overlay" v-if="seen" :title="name" :translate="translate" :year="year" ></film-card-overlay>
         </transition>
     </div>
+    </nuxt-link>
 </template>
 
 <script>
@@ -37,6 +39,9 @@ export default {
         }
     },
     props: {
+        id: {
+            type: String,
+        },
         name: {
             type: String,
         },

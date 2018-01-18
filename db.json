@@ -2,8 +2,36 @@
   "homepage": [{
     "id": 1,
     "searchBackground": "http://iranfilm.co/wp-content/uploads/2017/12/startwars.jpg",
-    "hottestMovies": [{
-        "id": 1,
+    "hottestMovies": [
+            {
+            "id": 1,
+            "title": "Happy Death Day",
+            "translate": "روز مرگ مبارک",
+            "thumbnail": "http://media.iranfilm.co/title/tt5308322/poster_thumbnail.jpg",
+            "genres": [
+              "ترسناک",
+              "هیجانی",
+              "رازآلود"
+            ],
+            "year": 2017,
+            "quality": "BluRay",
+            "rate": 6.5
+          },
+          {
+            "id": 2,
+            "title": "The Foreigner",
+            "translate": "بیگانه",
+            "thumbnail": "http://media.iranfilm.co/title/tt1615160/poster_thumbnail.jpg",
+            "genres": [
+              "اکشن",
+              "هیجان‌انگیز"
+            ],
+            "year": 2017,
+            "quality": "BluRay",
+            "rate": 7.1
+          },
+        {
+        "id": 3,
         "title": "Last Flying Flag",
         "translate": "آخرین پرچم",
         "thumbnail": "http://media.iranfilm.co/title/tt6018306/poster_thumbnail.jpg",
@@ -16,7 +44,7 @@
         "rate": 7.2
       },
       {
-        "id": 2,
+        "id": 4,
         "title": "Geostorm",
         "translate": "طوفان",
         "thumbnail": "http://media.iranfilm.co/title/tt1981128/poster_thumbnail.jpg",
@@ -30,7 +58,7 @@
         "rate": 5.4
       },
       {
-        "id": 3,
+        "id": 5,
         "title": "Goodbye Christopher Robin",
         "translate": "خداحافظ کریستوفر رابین",
         "thumbnail": "http://media.iranfilm.co/title/tt1653665/poster_thumbnail.jpg",
@@ -42,33 +70,6 @@
         "year": 2017,
         "quality": "BluRay",
         "rate": 7.2
-      },
-      {
-        "id": 4,
-        "title": "Happy Death Day",
-        "translate": "روز مرگ مبارک",
-        "thumbnail": "http://media.iranfilm.co/title/tt5308322/poster_thumbnail.jpg",
-        "genres": [
-          "ترسناک",
-          "هیجانی",
-          "رازآلود"
-        ],
-        "year": 2017,
-        "quality": "BluRay",
-        "rate": 6.5
-      },
-      {
-        "id": 5,
-        "title": "The Foreigner",
-        "translate": "بیگانه",
-        "thumbnail": "http://media.iranfilm.co/title/tt1615160/poster_thumbnail.jpg",
-        "genres": [
-          "اکشن",
-          "هیجان‌انگیز"
-        ],
-        "year": 2017,
-        "quality": "BluRay",
-        "rate": 7.1
       }
     ],
     "staticBanner": "http://iranfilm.co/wp-content/uploads/2018/01/image_preview5454.png",
