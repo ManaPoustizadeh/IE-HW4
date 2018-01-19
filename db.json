@@ -204,5 +204,37 @@
         "writingScore": 3,
         "text": "این فیلم بهترین فیلم بود"
     }
-]
+],
+    "users": [
+        {
+            "id": "1",
+            "username": "مانا",
+            "avatar": "https://freeiconshop.com/wp-content/uploads/edd/person-girl-flat.png",
+            "phoneNumber": "989193777264",
+            "name": "مانا",
+            "lastname": "پوستی‌زاده",
+            "email": "mana0pst@gmail.com",
+            "nickName": "mon"
+        },
+        {
+            "id": "2",
+            "username": "شهرام",
+            "avatar": "https://freeiconshop.com/wp-content/uploads/edd/person-flat.png",
+            "phoneNumber": "989193775564",
+            "name": "شهرام",
+            "lastname": "",
+            "email": "shahram@gmail.com",
+            "nickName": ""
+        },
+        {
+            "id": "3",
+            "username": "mohammad",
+            "avatar": "https://freeiconshop.com/wp-content/uploads/edd/person-flat.png",
+            "phoneNumber": "989304959968",
+            "name": "محمد",
+            "lastname": "رجبی",
+            "email": "rajabiseraji@outlook.com",
+            "nickName": "mors"
+        }
+    ]
 }

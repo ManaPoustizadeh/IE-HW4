@@ -89,7 +89,7 @@
                     :resolutions="movieData.availableDownloadResolutions"  
         ></download-tab>
         <div v-if="activeTab.comments == 'active'">
-            <editable-comment></editable-comment>
+            <editable-comment :userName="userData.username" :userAvatar="userData.avatar"></editable-comment>
             <comment v-for="comment in movieData.comments"
                     :key="comment.id"
                     :directorScore="comment.directorshipScore"
@@ -117,6 +117,7 @@
         </div>
         <div v-if="activeTab.gallery == 'active'" id="sub" class="card d-flex justify-content-center align-items-center w-100 m-2 p-5 bg-light">
             هیچ آیتمی در گالری موجود نیست
+            {{userData}}
         </div>
     </div>
     <!-- <div> -->
@@ -137,6 +138,8 @@ export default {
             await store.dispatch('movie/getMovieData', movieID);
             await store.dispatch('movie/getComments', movieID);
         }
+        const userID = 1; //for now
+        await store.dispatch('user/getUserData', userID);
     },
     methods: {
         selectTab(tabName) {
@@ -168,6 +171,7 @@ export default {
         ...mapGetters({
             movieData: 'movie/movieData',
             comments: 'movie/comments',
+            userData: 'user/user',
         })
     },
     components: {
