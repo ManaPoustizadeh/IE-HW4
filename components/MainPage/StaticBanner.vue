@@ -1,5 +1,6 @@
 <template>
-    <div class="container banner-container row text-right w-100 justify-content-start align-items-start" :style="{backgroundColor: color, color: textColor}">
+    <div class="container banner-container row text-right w-100 justify-content-start align-items-start" :style="{backgroundColor: color, color: textColor, backgroundImage: `url(${img})`}">
+        <div class="container-background" :style="{backgroundColor: color}"></div>
         <div class="mt-5 mr-3 position-absolute text-white">
             <h3>
                 {{title}}
@@ -14,7 +15,7 @@
             </div>
         </div>
         <!-- put the same button we used in search container here too -->
-        <img src="~/assets/img/banner.png" alt="" class="pull-left">
+        <!-- <img src="~/assets/img/banner.png" alt="" class="pull-left"> -->
     </div>
 </template>
 
@@ -45,8 +46,19 @@ export default {
 </script>
 
 <style scoped>
+    .container-background {
+        position: absolute;
+        height: 200px;
+        width: 100%;
+        z-index: -2;
+        right: 0;
+    }
+
     .banner-container {
         min-height: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     .banner-button {
