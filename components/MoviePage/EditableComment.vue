@@ -1,34 +1,34 @@
 <template>
-  <b-card class="m-4 text-right d-flex">
-    <div class="row pr-5">
-      <div class="col-sm-5">
-        <div class="row text-right mb-4">
-          <div class="col-sm-3 blue"><b>کارگردانی</b></div>
-          <div class="col-sm-3 blue">{{directorScore + ' از 10'}}</div>
+  <b-card class="m-4">
+    <div class="row justify-content-center ">
+      <div class="col-lg-5 col-xs-12">
+        <div class="row text-center justify-content-center mb-4">
+          <div class="col-lg-3 col-xs-12 blue"><b>کارگردانی</b></div>
+          <div class="col-lg-3 col-xs-12 blue">{{directorScore + ' از 10'}}</div>
           <range-slider
-            class="slider col-sm-5 p-0"
+            class="col-lg-4 col-xs-12 mx-auto p-0 slider"
             min="0"
             max="10"
             step="1"
             v-model="directorScore">
           </range-slider>
         </div>
-        <div class="row text-right mb-4">
-          <div class="col-sm-3 blue"><b>بازیگری</b></div>
-          <div class="col-sm-3 blue">{{writingScore + ' از 10'}}</div>
+        <div class="row text-center justify-content-center mb-4">
+          <div class="col-lg-3 col-xs-12 blue"><b>بازیگری</b></div>
+          <div class="col-lg-3 col-xs-12 blue">{{writingScore + ' از 10'}}</div>
           <range-slider
-            class="slider col-sm-5 p-0"
+            class="col-lg-4 col-xs-12 mx-auto p-0 slider"
             min="0"
             max="10"
             step="1"
             v-model="writingScore">
           </range-slider>
         </div>
-        <div class="row text-right ">
-          <div class="col-sm-3 blue"><b>فیلمنامه</b></div>
-          <div class="col-sm-3 blue">{{actingScore + ' از 10'}}</div>
+        <div class="row text-center justify-content-center ">
+          <div class="col-lg-3 col-xs-12 blue"><b>فیلمنامه</b></div>
+          <div class="col-lg-3 col-xs-12 blue">{{actingScore + ' از 10'}}</div>
           <range-slider
-            class="slider col-sm-5 p-0"
+            class="col-lg-4 col-xs-12 mx-auto p-0 slider"
             min="0"
             max="10"
             step="1"
@@ -36,8 +36,8 @@
           </range-slider>
         </div>
       </div>
-      <img class="rounded-circle mx-2" height="80px" :src="userAvatar" />
-      <div class="w-50 col-sm-5">
+      <img class="rounded-circle d-block mt-lg-0 mt-5 mb-lg-0 mb-3" height="80px" :src="userAvatar" />
+      <div class="col-lg-6 col-xs-12">
         <b-card class="rounded">
           <b-form-textarea type="text" v-model="text" :rows="3" :max-rows="6" class="border-0 input"></b-form-textarea>
           <b-form-group>

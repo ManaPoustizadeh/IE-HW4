@@ -13,22 +13,22 @@
         </div> 
     </div>
     <hr>
-    <div class="row">
-        <div class="col-sm-2 options-menu">
+    <div class="row justify-content-md-start justify-content-center">
+        <div class="col-sm-2 options-menu pb-3 pb-md-2">
             <span class="options-menu-lang">همه زبان‌ها</span>
             <i class="fa fa-angle-down fa-lg opt-menu-angle"></i>
         </div>
-        <div class="col-sm-2 options-menu">
+        <div class="col-sm-2 options-menu pb-3 pb-md-2">
             <span class="options-menu-item">ریلیز</span>
             <span class="options-all">همه</span>
             <i class="fa fa-angle-down fa-lg opt-menu-angle"></i>
         </div>
-        <div class="col-sm-2 options-menu">
+        <div class="col-sm-2 options-menu pb-3 pb-md-2">
             <span class="options-menu-item">نوع</span>
             <span class="options-all">همه</span>
             <i class="fa fa-angle-down fa-lg opt-menu-angle"></i>
         </div>
-        <div class="col-sm-2 options-menu">
+        <div class="col-sm-2 options-menu pb-3 pb-md-2">
             <span class="options-menu-item">رزولوشن</span>
             <span class="options-all">همه</span>
             <i class="fa fa-angle-down fa-lg opt-menu-angle"></i>
@@ -53,7 +53,7 @@
     <div class="row container bluRay">
         <span class="bluRay-text"><b>موسیقی متن</b></span>
     </div>
-    <div class="row movie-row justify-content-center">
+    <div class="row movie-row justify-content-center d-md-block d-none">
         <span class="size">
             <i class="fa fa-download download-icon" aria-hidden="true"></i>
             <span>951MB</span>
@@ -73,6 +73,36 @@
         <span class="music-desc duration">
             <span>BluRay</span>
         </span>
+    </div>
+    <div class="download-card mb-2 mt-3 card d-md-none d-block my-1 justify-content-center" 
+            :key="'music-mobile'">
+        <div class="card-body w-100 justify-content-center text-center">
+            <div>
+                <h2 :class="'d-inline text-dark'">
+                    320K
+                </h2>
+                <span>
+                    Zip
+                </span>
+            </div>
+            <div>
+                <span class="mx-1">Ganool </span>
+                <span class="download-size"><b>120 Mb</b></span>
+            </div>
+            <div class="mt-5 download-icons">
+                <span class="badge rounded-circle bg-secondary text-light mx-3 p-3">
+                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                </span>
+                <span class="badge rounded-circle bg-secondary text-white mx-3 p-3">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                </span>
+                <span class="badge rounded-circle bg-secondary text-white mx-3 p-3">
+                    <i class="fa fa-flag-o" aria-hidden="true"></i>
+                </span>
+            </div>
+            <div :class="'download-card-bottom bg-light'">
+            </div>
+        </div>
     </div>
 </div>
 </template>
@@ -112,6 +142,31 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+    .download-card {
+        height: 200px;
+        border-width: 2px;
+    }
 
+    .encoder {
+
+    }
+
+    
+    .download-icons {
+        position: relative;
+        z-index: 2000;
+    }
+
+    .download-card-bottom {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        right: 0;
+        bottom: 0;
+    }
+
+    .download-card-bottom .badge{
+        font-size: 18px;
+    }
 </style>

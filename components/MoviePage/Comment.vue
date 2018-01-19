@@ -1,26 +1,38 @@
 <template>
-<b-card class="m-4 text-right d-flex">
-  <div class="row pr-5">
+<b-card class="m-4 text-right d-flex pb-4">
+  <div class="row justify-content-center pr-md-5 row">
     <div class="col-sm-5">
-        <div class="row text-right mb-4">
+        <div class="mb-4 row text-center">
           <div class="col-sm-3 blue"><b>کارگردانی</b></div>
           <div class="col-sm-3 blue">{{directorScore + ' از 10'}}</div>
-          <b-progress :value="directorScore" :max="10" class="mt-2 progress col-sm-6 p-0" width="20px"></b-progress>
+          <b-progress :value="directorScore" 
+                      :max="10" 
+                      class="col-sm-6 mt-2 mx-auto my-3 p-0 progress" 
+                      width="20px">
+          </b-progress>
         </div>
-        <div class="row text-right mb-4">
+        <div class="row text-center mb-4">
           <div class="col-sm-3 blue"><b>بازیگری</b></div>
           <div class="col-sm-3 blue">{{writingScore + ' از 10'}}</div>
-          <b-progress :value="writingScore" :max="10" class="mt-2 progress col-sm-6 p-0"></b-progress>
+          <b-progress :value="writingScore" 
+                      :max="10" 
+                      class="col-sm-6 mt-2 mx-auto my-3 p-0 progress" 
+                      width="20px">
+          </b-progress>
         </div>
-        <div class="row text-right ">
+        <div class="row text-center ">
           <div class="col-sm-3 blue"><b>فیلمنامه</b></div>
           <div class="col-sm-3 blue">{{actingScore + ' از 10'}}</div>
-          <b-progress :value="actingScore" :max="10" class="mt-2 progress col-sm-6 p-0"></b-progress>
+          <b-progress :value="actingScore" 
+                      :max="10" 
+                      class="col-sm-6 mt-2 mx-auto my-3 p-0 progress" 
+                      width="20px">
+          </b-progress>
         </div>
     </div>
-    <img class="rounded-circle" height="80px" :src="userAvatar" />
-    <div class="w-50 col-sm-6">
-        <b-card class="rounded">
+    <img class="d-block my-3 my-md-0 rounded-circle" height="80px" :src="userAvatar" />
+    <div class="col-sm-6">
+        <b-card class="rounded pb-3">
           <div class="d-flex align-items-center mb-2">
             <span class="date">{{date}}</span>
             <span class="mr-auto text-left">

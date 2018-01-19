@@ -72,7 +72,7 @@
         </div>
     </div>
     <div class="container mb-5">
-        <ul class="d-flex justify-content-around center download-nav">
+        <ul class="center d-md-flex download-nav justify-content-around pr-0 pr-md-3 text-center text-md-right">
             <li :class="'horizontal dl-li '+activeTab.download" @click="selectTab('download')">دانلود</li>
             <li :class="'horizontal dl-li '+activeTab.sub" @click="selectTab('sub')">زیرنویس</li>
             <li :class="'horizontal dl-li '+activeTab.comments" @click="selectTab('comments')">نظر کاربران</li>
@@ -117,7 +117,7 @@
         </div>
         <div v-if="activeTab.gallery == 'active'" id="sub" class="card d-flex justify-content-center align-items-center w-100 m-2 p-5 bg-light">
             هیچ آیتمی در گالری موجود نیست
-            {{userData}}
+            <!-- {{userData}} -->
         </div>
     </div>
     <!-- <div> -->
