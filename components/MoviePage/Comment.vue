@@ -29,10 +29,14 @@
             </span>
           </div>
             <p>{{text}}</p>
-          <span class="up-vote">{{upVoteCount}}</span>
-          <i class="fa fa-thumbs-up ml-3" aria-hidden="true"></i>
-          <span class="down-vote">{{downVoteCount}}</span>
-          <i class="fa fa-thumbs-down ml-3" aria-hidden="true"></i>
+            <span class="up-vote">
+              <span class="ml-1">{{upVoteCount}}</span>
+              <i class="fa fa-thumbs-up ml-3" aria-hidden="true"></i>
+            </span>
+            <span class="down-vote">
+              <span class="ml-1">{{downVoteCount}}</span>
+              <i class="fa fa-thumbs-down ml-3" aria-hidden="true"></i>
+            </span>
         </b-card>
     </div>
   </div>
@@ -89,9 +93,11 @@ export default {
   }
   .up-vote{
     color: #59ad79;
+    cursor: pointer;
   }
   .down-vote{
     color: red;
+    cursor: pointer;
   }
   .fa-thumbs-down{
     color: red;
