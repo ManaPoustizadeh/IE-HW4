@@ -20,8 +20,7 @@
     "bootstrap-vue": "^1.4.1",
     "google-translate-api": "^2.3.0",
     "nuxt": "^1.0.0",
-    "rui-vue-emoji": "^1.1.0",
-    "vue-slider-component": "^2.4.9"
+    "vue-range-slider": "^0.2.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

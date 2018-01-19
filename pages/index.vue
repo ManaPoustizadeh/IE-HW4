@@ -37,5 +37,7 @@ export default {
 </script>
 
 <style>
-
+  a:hover, a:active, a:focus {
+    text-decoration: none;
+  }
 </style>

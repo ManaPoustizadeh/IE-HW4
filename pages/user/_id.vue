@@ -31,7 +31,12 @@
 <script>
   import UserTab from '~/components/UserPage/UserTab.vue';
   import UserMenu from '~/components/UserPage/UserMenu.vue';
+  import { mapGetters } from'vuex';
   export default {
+     async fetch({store, params}) {
+        const userID = 1; //for now
+        await store.dispatch('user/getUserData', userID);
+    },
     data() {
       return {
 

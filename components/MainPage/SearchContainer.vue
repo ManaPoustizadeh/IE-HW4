@@ -1,12 +1,13 @@
 <template>
     <!-- This is the overview of the structure -->
     <div class="container search-container row text-center w-100 justify-content-center align-items-center bg-danger" :style="{background: `url(${img})`}">
+        <div class="container-background"></div>
         <!-- give it the needed props and stuff -->
-        <div class="text-center">
-            <span class="input-title w-100">
+        <div class="text-center row justify-content-end justify-content-md-center">
+            <span class="input-title w-100 col-12">
                 {{title}}
             </span>
-            <div class="d-flex w-100 mb-2 mt-1 main-center">
+            <div class="row w-100 mr-auto mb-2 mt-1 main-center">
                 <b-button class="rounded-circle border-0 gas ml-2 text-white form-button">
                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                 </b-button>
@@ -47,6 +48,15 @@ export default {
 </script>
 
 <style scoped>
+    .container-background {
+        background: black; 
+        position: absolute;
+        height: 400px;
+        width: 100%;
+        z-index: -2;
+        left: 0;
+    }
+
   .search-container {
     height: 400px;
   }
@@ -63,9 +73,9 @@ export default {
     opacity: 70;
   }
 
-  .main-center{
-    min-width: 500px;
-  }
+  /* .main-center{ */
+    /* min-width: 500px; */
+  /* } */
   .input-title{
     color: white;
   }
