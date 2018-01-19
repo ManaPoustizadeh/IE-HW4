@@ -20,7 +20,7 @@
       <div class="row">
         <img src="../assets/img/google.png" class="footer-logo m-1"/>
         <img src="../assets/img/Telegram.png" class="footer-logo m-1"/>
-        <img src="../assets/img/instagram.png" class="footer-logo m-1 rounded-circle"/>
+        <img src="../assets/img/twitter.png" class="footer-logo m-1 rounded-circle"/>
         <img src="../assets/img/twitter.png" class="footer-logo m-1"/>
       </div>
     </div>
