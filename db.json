@@ -160,7 +160,7 @@
 ],
   "comments": [
     {
-        "userId": 1,
+        "userId": "1",
         "movieId": 1,
         "date": "12 10 2017",
         "positive": true,
@@ -171,7 +171,7 @@
         "writingScore": 10
     },
     {
-        "userId": 2,
+        "userId": "2",
         "movieId": 1,
         "date": "12 09 2017",
         "positive": false,
@@ -182,7 +182,7 @@
         "writingScore": 5
     },
     {
-        "userId": 3,
+        "userId": "3",
         "movieId": 2,
         "date": "12 10 2005",
         "positive": true,
@@ -192,5 +192,17 @@
         "actorshipScore": 5,
         "writingScore": 3
     }
-]
+],
+ "users":[
+     {
+         "id": "1",
+         "name": "mana",
+         "avatar": "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiJ4ZvU8uPYAhWSaFAKHWsABNAQjRwIBw&url=https%3A%2F%2Ffreeiconshop.com%2Ficon%2Fperson-icon-flat%2F&psig=AOvVaw0q5Brkul4dZEqJPs9WEoNz&ust=1516446786282302"
+     },
+     {
+        "id": "2",
+         "name": "mohammad",
+         "avatar": "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiJ4ZvU8uPYAhWSaFAKHWsABNAQjRwIBw&url=https%3A%2F%2Ffreeiconshop.com%2Ficon%2Fperson-icon-flat%2F&psig=AOvVaw0q5Brkul4dZEqJPs9WEoNz&ust=1516446786282302"
+     }
+ ]
 }

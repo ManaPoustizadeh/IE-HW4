@@ -5,7 +5,7 @@
         <div class="row text-right mb-4">
           <div class="col-sm-3 blue"><b>کارگردانی</b></div>
           <div class="col-sm-2 blue">{{directorScore + ' از 10'}}</div>
-          <b-progress :value="directorScore" :max="10" class="mt-2 progress col-sm-6 p-0" width="20px"></b-progress>
+          <!-- <input type="range" :value="directorScore" :max="10" class="mt-2 progress col-sm-6 p-0" width="20px"> -->
         </div>
         <div class="row text-right mb-4">
           <div class="col-sm-3 blue"><b>بازیگری</b></div>
@@ -21,15 +21,24 @@
       <!--<img class="rounded-circle mx-2" height="120px" :src="userAvatar" />-->
       <div class="w-50 col-sm-6">
         <b-card class="rounded">
-          <b-form-input class="border-0 input"></b-form-input>
-          <b-form-checkbox></b-form-checkbox>
+          <b-form-textarea type="text" v-model="text" :rows="3" :max-rows="6" class="border-0 input"></b-form-textarea>
+          <b-form-group>
+            <b-form-checkbox name="no-opinion">نظری ندارم</b-form-checkbox>
+            <b-form-checkbox name="no-opinion">پیشنهاد نمی‌کنم</b-form-checkbox>
+            <b-form-checkbox name="no-opinion">پیشنهاد می‌کنم</b-form-checkbox>
+          </b-form-group>
         </b-card>
+        <div class="text-left">
+          <b-button class="green my-3">ثبت دیدگاه</b-button>
+        </div>
       </div>
     </div>
   </b-card>
 </template>
 
 <script>
+// import 'rui-vue-emoji/dist/vue-emoji.css';
+// import VueEmoji from 'rui-vue-emoji'
   export default {
     props: {
       directorScore: {
@@ -62,7 +71,7 @@
       recommend: {
         type: String
       }
-    }
+    },
   };
 </script>
 
@@ -74,30 +83,27 @@
   .blue{
     color: blue;
   }
-  .fa-thumbs-up{
-    color: #59ad79;
-  }
-  .up-vote{
-    color: #59ad79;
-  }
-  .down-vote{
-    color: red;
-  }
-  .fa-thumbs-down{
-    color: red;
-  }
-  .fa-check-square{
-    color: #1dc974;
-  }
-  .date{
-    color: #bababa;
-    font-size: 12px;
-  }
-  .recommend{
-    color: #1dc974;
+  .green{
+    background-color: #1dc974;
+    border: none;
   }
   .input:active , .input:focus{
     outline: none;
     box-shadow: none;
   }
+
+  .custom-checkbox{
+    font-size: 13px;
+  }
+
+  .card-body{
+    padding-bottom: 0px;
+  }
+
+  .b-form-group{
+    margin-bottom: 0px
+  }
+  /* .input{
+    min-height: 100px;
+  } */
 </style>
