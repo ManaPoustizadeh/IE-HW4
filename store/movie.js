@@ -92,6 +92,10 @@ export const actions = {
             console.log(error);
         }
     }
+
+    // async commentUpvote({commit}, movieID, commentID, newComment) {
+    //     const url = baseURL+movieID+'/comments'
+    // }
     
 }
 

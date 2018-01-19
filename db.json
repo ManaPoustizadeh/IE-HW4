@@ -159,8 +159,11 @@
     }
 ],
   "comments": [
-    {
-        "userId": 1,
+    {  
+        "id": "1",
+        "userId": "1",
+        "username": "مانا",
+        "avatar": "https://freeiconshop.com/wp-content/uploads/edd/person-flat.png",
         "movieId": 1,
         "date": "12 10 2017",
         "positive": true,
@@ -168,10 +171,14 @@
         "downVotesForThisComment": 20,
         "directorshipScore": 8,
         "actorshipScore": 5,
-        "writingScore": 10
+        "writingScore": 10,
+        "text": "سلام فیلم خیلی شپلنگی بود"
     },
     {
-        "userId": 2,
+        "id": "2",
+        "userId": "2",
+        "username": "محمد",
+        "avatar": "https://freeiconshop.com/wp-content/uploads/edd/person-flat.png",
         "movieId": 1,
         "date": "12 09 2017",
         "positive": false,
@@ -179,10 +186,14 @@
         "downVotesForThisComment": 5,
         "directorshipScore": 1,
         "actorshipScore": 10,
-        "writingScore": 5
+        "writingScore": 5,
+        "text": "سلام، فیلم به این شخمی‌ای تو زندگیم ندیده بودم"
     },
     {
-        "userId": 3,
+        "id": 3,
+        "userId": "3",
+        "username": "شهرام",
+        "avatar": "https://freeiconshop.com/wp-content/uploads/edd/person-flat.png",
         "movieId": 2,
         "date": "12 10 2005",
         "positive": true,
@@ -190,7 +201,8 @@
         "downVotesForThisComment": 1,
         "directorshipScore": 8,
         "actorshipScore": 5,
-        "writingScore": 3
+        "writingScore": 3,
+        "text": "این فیلم بهترین فیلم بود"
     }
 ]
 }

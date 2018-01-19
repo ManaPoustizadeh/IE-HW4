@@ -1,14 +1,5 @@
 <template>
-    <div class="container">
-    <ul class="d-flex justify-content-around center download-nav">
-        <li class="horizontal active dl-li">دانلود</li>
-        <li class="horizontal dl-li">زیرنویس</li>
-        <li class="horizontal dl-li">نظر کاربران</li>
-        <li class="horizontal dl-li">نقد و بررسی</li>
-        <li class="horizontal dl-li">عوامل فیلم</li>
-        <li class="horizontal dl-li">جوایز</li>
-        <li class="horizontal dl-li">گالری</li>
-    </ul>
+    <div class="">
     <div class="d-flex container comment justify-content-around">
         <div class="text-success">
             <h5 class="value mb-2">ارزش دانلود 8 از 10</h5>

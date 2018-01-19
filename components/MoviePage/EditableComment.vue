@@ -5,7 +5,9 @@
         <div class="row text-right mb-4">
           <div class="col-sm-3 blue"><b>کارگردانی</b></div>
           <div class="col-sm-2 blue">{{directorScore + ' از 10'}}</div>
-          <b-progress :value="directorScore" :max="10" class="mt-2 progress col-sm-6 p-0" width="20px"></b-progress>
+          <!-- <b-progress :value="directorScore" :max="10" class="mt-2 progress col-sm-6 p-0" width="20px"></b-progress> -->
+          <div class="col-sm-3">
+          </div>
         </div>
         <div class="row text-right mb-4">
           <div class="col-sm-3 blue"><b>بازیگری</b></div>
@@ -67,6 +69,32 @@
 </script>
 
 <style scoped>
+  .slider>.dragger {
+  background: #3a6ee8;
+  width: 28px;
+  height: 11px;
+  border-radius: 7px
+}
+
+.slider>.dragger:hover {
+  background: #3a6ee8
+}
+
+.slider>.track,
+.slider>.highlight-track {
+  background: #969696;
+  height: 4px
+}
+
+.slider>.highlight-track {
+  background: #3a6ee8
+}
+
+.slider {
+  direction: ltr
+}
+
+
   .progress{
     max-height: 4px;
     max-width: 150px;

@@ -71,24 +71,56 @@
             </div>
         </div>
     </div>
-    <download-tab :downloadRate="movieData.downloadRate"
-                  :totalVotes="movieData.totalVotes"
-                  :positiveVotes="movieData.positiveVotes"
-                  :qualities="movieData.availableDownloadQualities"
-                  :resolutions="movieData.availableDownloadResolutions"  
-    ></download-tab>
-    <div>
-    <comment :directorScore="4"
-             :writingScore="7"
-             :actingScore="8"
-             :userName="'manaaa'"
-             :text="'انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود '"
-             :upVoteCount="31"
-             :date="'7 تیر سال فلان'"
-             :recommend="'فیلم را پیشنهاد میکنم'"
-             :downVoteCount="1"></comment>
-    <editable-comment></editable-comment>
-  </div>
+    <div class="container mb-5">
+        <ul class="d-flex justify-content-around center download-nav">
+            <li :class="'horizontal dl-li '+activeTab.download" @click="selectTab('download')">دانلود</li>
+            <li :class="'horizontal dl-li '+activeTab.sub" @click="selectTab('sub')">زیرنویس</li>
+            <li :class="'horizontal dl-li '+activeTab.comments" @click="selectTab('comments')">نظر کاربران</li>
+            <li :class="'horizontal dl-li '+activeTab.review" @click="selectTab('review')">نقد و بررسی</li>
+            <li :class="'horizontal dl-li '+activeTab.cast" @click="selectTab('cast')">عوامل فیلم</li>
+            <li :class="'horizontal dl-li '+activeTab.prize" @click="selectTab('prize')">جوایز</li>
+            <li :class="'horizontal dl-li '+activeTab.gallery" @click="selectTab('gallery')">گالری</li>
+        </ul>
+        <download-tab v-if="activeTab.download == 'active'"
+                    :downloadRate="movieData.downloadRate"
+                    :totalVotes="movieData.totalVotes"
+                    :positiveVotes="movieData.positiveVotes"
+                    :qualities="movieData.availableDownloadQualities"
+                    :resolutions="movieData.availableDownloadResolutions"  
+        ></download-tab>
+        <div v-if="activeTab.comments == 'active'">
+            <editable-comment></editable-comment>
+            <comment v-for="comment in movieData.comments"
+                    :key="comment.id"
+                    :directorScore="comment.directorshipScore"
+                    :writingScore="comment.writingScore"
+                    :actingScore="comment.actorshipScore"
+                    :userName="comment.username"
+                    :text="comment.text"
+                    :userAvatar="comment.avatar"
+                    :upVoteCount="comment.upVotesForThisComment"
+                    :date="comment.date"
+                    :recommend="comment.positive ? 'فیلم را پیشنهاد میکنم' : 'فیلم را پیشنهاد نمی‌کنم'"
+                    :downVoteCount="comment.downVotesForThisComment"></comment>
+        </div>
+        <div v-if="activeTab.sub == 'active'" id="sub" class="card d-flex justify-content-center align-items-center w-100 m-2 p-5 bg-light">
+            هیچ زیرنویسی موجود نیست
+        </div>
+        <div v-if="activeTab.review == 'active'" id="sub" class="card d-flex justify-content-center align-items-center w-100 m-2 p-5 bg-light">
+            هیچ نقدی موجود نیست
+        </div>
+        <div v-if="activeTab.cast == 'active'" id="sub" class="card d-flex justify-content-center align-items-center w-100 m-2 p-5 bg-light">
+            هیچ اطلاعاتی از بازیگران موجود نیست
+        </div>
+        <div v-if="activeTab.prize == 'active'" id="sub" class="card d-flex justify-content-center align-items-center w-100 m-2 p-5 bg-light">
+            هیچ اطلاعاتی از جوایز موجود نیست
+        </div>
+        <div v-if="activeTab.gallery == 'active'" id="sub" class="card d-flex justify-content-center align-items-center w-100 m-2 p-5 bg-light">
+            هیچ آیتمی در گالری موجود نیست
+        </div>
+    </div>
+    <!-- <div> -->
+  <!-- </div> -->
 </div>
 </template>
 
@@ -106,9 +138,30 @@ export default {
             await store.dispatch('movie/getComments', movieID);
         }
     },
+    methods: {
+        selectTab(tabName) {
+            for(var key in this.activeTab) {
+                if (this.activeTab.hasOwnProperty(key)) {
+                    this.activeTab[key] = '';
+                }
+            }
+            this.activeTab[tabName] = 'active'; 
+        }
+    },
     data() {
+        let activeTab = {
+            download: 'active',
+            sub: '',
+            comments: '',
+            review: '',
+            cast: '',
+            prize: '',
+            gallery: '',
+
+        }
         return {
-            
+            currentTab: 'download',
+            activeTab,
         }
     },
     computed: {
@@ -126,6 +179,10 @@ export default {
 }
 </script>
 <style scoped>
+    .download-nav li {
+        cursor: pointer;
+    }
+
     a, a:hover, a:active {
         text-decoration: none;
         color: inherit;
