@@ -77,11 +77,26 @@
                   :qualities="movieData.availableDownloadQualities"
                   :resolutions="movieData.availableDownloadResolutions"  
     ></download-tab>
+    <div>
+    <comment :directorScore="4"
+             :writingScore="7"
+             :actingScore="8"
+             :userName="'manaaa'"
+             :text="'انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود انیمیشن خوبی بود '"
+             :upVoteCount="31"
+             :date="'7 تیر سال فلان'"
+             :recommend="'فیلم را پیشنهاد میکنم'"
+             :downVoteCount="1"></comment>
+    <editable-comment></editable-comment>
+  </div>
 </div>
 </template>
 
 <script>
+import Comment from '~/components/MoviePage/Comment.vue';
+import EditableComment from '~/components/MoviePage/EditableComment.vue';
 import DownloadTab from '~/components/MoviePage/DownloadTab.vue';
+
 import { mapGetters } from'vuex';
 export default {
     async fetch({store, params}) {
@@ -104,6 +119,8 @@ export default {
     },
     components: {
         DownloadTab,
+        Comment,
+        EditableComment
     }
 
 }

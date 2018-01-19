@@ -1,7 +1,7 @@
 <template>
-<b-card class="m-4 text-right d-flex">
-  <div class="row pr-5">
-    <div class="col-sm-5">
+  <b-card class="m-4 text-right d-flex">
+    <div class="row pr-5">
+      <div class="col-sm-5">
         <div class="row text-right mb-4">
           <div class="col-sm-3 blue"><b>کارگردانی</b></div>
           <div class="col-sm-2 blue">{{directorScore + ' از 10'}}</div>
@@ -17,63 +17,53 @@
           <div class="col-sm-2 blue">{{actingScore + ' از 10'}}</div>
           <b-progress :value="actingScore" :max="10" class="mt-2 progress col-sm-6 p-0"></b-progress>
         </div>
-    </div>
-    <!--<img class="rounded-circle mx-2" height="120px" :src="userAvatar" />-->
-    <div class="w-50 col-sm-6">
+      </div>
+      <!--<img class="rounded-circle mx-2" height="120px" :src="userAvatar" />-->
+      <div class="w-50 col-sm-6">
         <b-card class="rounded">
-          <div class="row">
-            <span class="date col-sm-6">{{date}}</span>
-            <span class="col-sm-6 text-left">
-              <span class="recommend">{{recommend}}</span>
-              <i class="fa fa-check-square mr-2" aria-hidden="true"></i>
-            </span>
-          </div>
-            <p>{{text}}</p>
-          <span class="up-vote">{{upVoteCount}}</span>
-          <i class="fa fa-thumbs-up ml-3" aria-hidden="true"></i>
-          <span class="down-vote">{{downVoteCount}}</span>
-          <i class="fa fa-thumbs-down ml-3" aria-hidden="true"></i>
+          <b-form-input class="border-0 input"></b-form-input>
+          <b-form-checkbox></b-form-checkbox>
         </b-card>
+      </div>
     </div>
-  </div>
-</b-card>
+  </b-card>
 </template>
 
 <script>
-export default {
+  export default {
     props: {
-        directorScore: {
-            type: Number,
-        },
-        writingScore: {
-            type: Number,
-        },
-        actingScore: {
-            type: Number,
-        },
-        userAvatar: {
-            type: String,
-        },
-        userName: {
-            type: String,
-        },
-        date: {
-            type: String,
-        },
-        text: {
-            type: String,
-        },
-        upVoteCount: {
-            type: Number,
-        },
-        downVoteCount: {
-            type: Number,
-        },
-        recommend: {
-            type: String
-        }
+      directorScore: {
+        type: Number,
+      },
+      writingScore: {
+        type: Number,
+      },
+      actingScore: {
+        type: Number,
+      },
+      userAvatar: {
+        type: String,
+      },
+      userName: {
+        type: String,
+      },
+      date: {
+        type: String,
+      },
+      text: {
+        type: String,
+      },
+      upVoteCount: {
+        type: Number,
+      },
+      downVoteCount: {
+        type: Number,
+      },
+      recommend: {
+        type: String
+      }
     }
-};
+  };
 </script>
 
 <style scoped>
@@ -105,5 +95,9 @@ export default {
   }
   .recommend{
     color: #1dc974;
+  }
+  .input:active , .input:focus{
+    outline: none;
+    box-shadow: none;
   }
 </style>
