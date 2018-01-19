@@ -82,6 +82,12 @@ export default {
 
     .film-rate, .film-quality {
         border: 1px solid rgba(22, 22, 22, 0.753);
+        color: #333;
+    }
+
+    .film-rate:focus, .film-rate:hover, .film-quality:hover, .film-quality:focus {
+        text-decoration: none;
+        color: #333;
     }
 
     .film-card {
