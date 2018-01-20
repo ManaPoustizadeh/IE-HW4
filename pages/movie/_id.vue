@@ -130,6 +130,7 @@ import Comment from '~/components/MoviePage/Comment.vue';
 import EditableComment from '~/components/MoviePage/EditableComment.vue';
 import DownloadTab from '~/components/MoviePage/DownloadTab.vue';
 
+
 import { mapGetters } from'vuex';
 export default {
     async fetch({store, params}) {
@@ -177,7 +178,7 @@ export default {
     components: {
         DownloadTab,
         Comment,
-        EditableComment
+        EditableComment,
     }
 
 }

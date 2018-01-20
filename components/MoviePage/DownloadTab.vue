@@ -53,7 +53,7 @@
     <div class="row container bluRay">
         <span class="bluRay-text"><b>موسیقی متن</b></span>
     </div>
-    <div class="row movie-row justify-content-center d-md-block d-none">
+    <!-- <div class="row movie-row justify-content-center d-md-block d-none">
         <span class="size">
             <i class="fa fa-download download-icon" aria-hidden="true"></i>
             <span>951MB</span>
@@ -73,8 +73,8 @@
         <span class="music-desc duration">
             <span>BluRay</span>
         </span>
-    </div>
-    <div class="download-card mb-2 mt-3 card d-md-none d-block my-1 justify-content-center" 
+    </div> -->
+    <div class="download-card mb-2 mt-3 card my-1 justify-content-center" 
             :key="'music-mobile'">
         <div class="card-body w-100 justify-content-center text-center">
             <div>
