@@ -1,13 +1,13 @@
 {
   "homepage": [{
     "id": 1,
-    "searchBackground": "http://iranfilm.co/wp-content/uploads/2017/12/startwars.jpg",
+    "searchBackground": "http://iranfilm.info/wp-content/uploads/2017/12/startwars.jpg",
     "hottestMovies": [
             {
             "id": "1",
             "title": "Happy Death Day",
             "translate": "روز مرگ مبارک",
-            "thumbnail": "http://media.iranfilm.co/title/tt5308322/poster_thumbnail.jpg",
+            "thumbnail": "http://media.iranfilm.info/title/tt5308322/poster_thumbnail.jpg",
             "genres": [
               "ترسناک",
               "هیجانی",
@@ -21,7 +21,7 @@
             "id": "2",
             "title": "The Foreigner",
             "translate": "بیگانه",
-            "thumbnail": "http://media.iranfilm.co/title/tt1615160/poster_thumbnail.jpg",
+            "thumbnail": "http://media.iranfilm.info/title/tt1615160/poster_thumbnail.jpg",
             "genres": [
               "اکشن",
               "هیجان‌انگیز"
@@ -34,7 +34,7 @@
         "id": "3",
         "title": "Last Flying Flag",
         "translate": "آخرین پرچم",
-        "thumbnail": "http://media.iranfilm.co/title/tt6018306/poster_thumbnail.jpg",
+        "thumbnail": "http://media.iranfilm.info/title/tt6018306/poster_thumbnail.jpg",
         "genres": [
           "درام",
           "کمدی"
@@ -47,7 +47,7 @@
         "id": "4",
         "title": "Geostorm",
         "translate": "طوفان",
-        "thumbnail": "http://media.iranfilm.co/title/tt1981128/poster_thumbnail.jpg",
+        "thumbnail": "http://media.iranfilm.info/title/tt1981128/poster_thumbnail.jpg",
         "genres": [
           "اکشن",
           "علمی",
@@ -61,7 +61,7 @@
         "id": "5",
         "title": "Goodbye Christopher Robin",
         "translate": "خداحافظ کریستوفر رابین",
-        "thumbnail": "http://media.iranfilm.co/title/tt1653665/poster_thumbnail.jpg",
+        "thumbnail": "http://media.iranfilm.info/title/tt1653665/poster_thumbnail.jpg",
         "genres": [
           "تاریخی",
           "خانوادگی",
@@ -72,7 +72,7 @@
         "rate": 7.2
       }
     ],
-    "staticBanner": "http://iranfilm.co/wp-content/uploads/2018/01/image_preview5454.png",
+    "staticBanner": "http://iranfilm.info/wp-content/uploads/2018/01/image_preview5454.png",
     "staticBannerTitle": "بروسلی رو بگیر",
     "staticBannerSubTitle": "بیا بگیرش دیگه",
     "staticBannerBackColor": "#DAA521",
