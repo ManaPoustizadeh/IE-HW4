@@ -4,9 +4,10 @@
 
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-      <b-btn v-b-modal.modal1 variant="outline-primary">
+      <b-btn v-b-modal.loginModal variant="outline-primary">
         ورود/عضویت
       </b-btn>
+      <user-login></user-login>
       <b-button class="rounded-circle border-0 gas mr-2 bg-transparent">
         <i class="fa fa-bell" aria-hidden="true"></i>
       </b-button>
@@ -39,10 +40,17 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import UserRegister from '~/components/UserRegister';
   export default {
     components: {
       UserRegister,
+=======
+  import UserLogin from '~/components/UserLogin';
+  export default {
+    components: {
+      UserLogin,
+>>>>>>> 64a3fa9c84d44dec959fcbecfa50797ec3c6ef4d
     }
   };
 

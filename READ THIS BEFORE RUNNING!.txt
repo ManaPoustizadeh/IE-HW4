@@ -1,0 +1,11 @@
+This project was produced using Nuxt, in order to run follow theses instructions: 
+
+1- first of all install 'yarn' in your system
+
+2- then open IE-HW4 folder and run 'yarn install' in a git bash or termianl
+
+3- then open another termianl in the root of the project and run 'yarn start-mockapi'
+
+4- YOU MUST USE A VPN OR PROXY because the project uses images from Iranfilm.co which is filtered!
+
+5- FINALLY, run 'yarn dev' and open http://localhost:3000
