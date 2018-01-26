@@ -70,6 +70,31 @@
         "year": 2017,
         "quality": "BluRay",
         "rate": 7.2
+      },
+      {
+        "id": "6",
+        "title": "Batman and Scooby doo",
+        "translate": "بتمن و اسکوبی دو",
+        "thumbnail": "http://media.iranfilm.co/title/tt7578566/poster_thumbnail.jpg",
+        "genres": [
+          "خانوادگی"
+        ],
+        "year": 2000,
+        "quality": "DVD",
+        "rate": 4.0
+      },
+      {
+        "id": "7",
+        "title": "Kickboxer",
+        "translate": "کیک بوکسور",
+        "thumbnail": "http://iranfilm.info/wp-content/uploads/2017/12/MV5BNzY4MDkwYmUtYTEwMy00ZmMyLWIxMzgtOGE4ZGJjYWJlOGY1XkEyXkFqcGdeQXVyMjExMTY5Mjc@._V1__thumbnail.jpg",
+        "genres": [
+          "جنگی",
+          "اکشن"
+        ],
+        "year": 2000,
+        "quality": "DVD",
+        "rate": 4.0
       }
     ],
     "staticBanner": "http://iranfilm.info/wp-content/uploads/2018/01/image_preview5454.png",

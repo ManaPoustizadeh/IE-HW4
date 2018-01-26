@@ -20,6 +20,7 @@
     "bootstrap-vue": "^1.4.1",
     "google-translate-api": "^2.3.0",
     "nuxt": "^1.0.0",
+    "vue-carousel": "^0.6.5",
     "vue-range-slider": "^0.2.4"
   },
   "devDependencies": {
