@@ -55,6 +55,7 @@ module.exports = {
     'bootstrap-vue/nuxt',
     '@nuxtjs/font-awesome',
     '@nuxtjs/axios',
+    '@nuxtjs/toast',
 
     // // Or if you have custom bootstrap CSS...
     // ['bootstrap-vue/nuxt', {
