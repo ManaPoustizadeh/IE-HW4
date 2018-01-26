@@ -4,12 +4,14 @@
 
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-      <b-button variant="outline-primary">
+      <b-btn v-b-modal.modal1 variant="outline-primary">
         ورود/عضویت
-      </b-button>
+      </b-btn>
       <b-button class="rounded-circle border-0 gas mr-2 bg-transparent">
         <i class="fa fa-bell" aria-hidden="true"></i>
       </b-button>
+
+      <user-register></user-register>
 
       <b-collapse is-nav id="nav_collapse">
 
@@ -37,7 +39,12 @@
 </template>
 
 <script>
-  export default {};
+import UserRegister from '~/components/UserRegister';
+  export default {
+    components: {
+      UserRegister,
+    }
+  };
 
 </script>
 
