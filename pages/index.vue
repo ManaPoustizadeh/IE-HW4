@@ -21,6 +21,7 @@ import MovieCarousel from '~/components/MainPage/MovieCarousel.vue';
 import {mapGetters} from 'vuex';
 
 export default {
+  middleware: ['loggedIn'],
   data() {
     return {
        list: [
@@ -43,6 +44,7 @@ export default {
   },
   async fetch ({store, params}) {
     await store.dispatch('homepage/getHomepageData');
+    await store.dispatch('homepage/getRecentMovies');
   },
   components: {
     SearchContainer,

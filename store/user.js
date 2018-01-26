@@ -48,7 +48,8 @@ export const state = () => {
 export const mutations =  {
     SET_USER(state, user) {
         state.loggedIn = !!user
-        state.user = user
+        state.user = user;
+        console.log(state.user);
     },
 
     SET_TOKEN(state, token) {

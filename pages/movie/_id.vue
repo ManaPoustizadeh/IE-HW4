@@ -82,11 +82,11 @@
             <li :class="'horizontal dl-li '+activeTab.gallery" @click="selectTab('gallery')">گالری</li>
         </ul>
         <download-tab v-if="activeTab.download == 'active'"
-                    :downloadRate="movieData.downloadRate"
+                    :downloadRate="movieData.rate"
                     :totalVotes="movieData.totalVotes"
                     :positiveVotes="movieData.positiveVotes"
-                    :qualities="movieData.availableDownloadQualities"
-                    :resolutions="movieData.availableDownloadResolutions"  
+                    :qualities="movieData.qualities"
+                    :resolutions="movieData.resolutions"  
         ></download-tab>
         <div v-if="activeTab.comments == 'active'">
             <editable-comment :userName="userData.username" :userAvatar="userData.avatar"></editable-comment>

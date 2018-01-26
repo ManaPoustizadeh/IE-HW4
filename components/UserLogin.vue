@@ -35,7 +35,7 @@
             مرا به خاطر بسپار
             </b-form-checkbox>
             <div class="w-100 text-center justify-content-center d-flex align-items-center">
-                <b-button :disabled="!usernameValid || !passwordValid" variant="success" class="mt-4 px-5">ورود</b-button>
+                <b-button @click="login" :disabled="!usernameValid || !passwordValid" variant="success" class="mt-4 px-5">ورود</b-button>
             </div>
         </div>
         <div v-else class="container p-5">
@@ -62,7 +62,7 @@
                 </b-form-checkbox>
                 </div>
                 <div class="text-center">
-                <b-btn id="registerButton" :disabled="!emailValid || !passwordConfirm || !passwordValid || !acceptedRules" variant="primary">عضویت</b-btn>
+                <b-btn @click="register" id="registerButton" :disabled="!emailValid || !passwordConfirm || !passwordValid || !acceptedRules" variant="primary">عضویت</b-btn>
                 </div>
             </b-form>
             </div>
@@ -93,12 +93,12 @@ export default {
 
                 this.$store.commit('auth/SET_TOKEN', token);
                 this.$store.dispatch('auth/FETCH', this);
-                this.$success('ورود موفقیت آمیز');
+                console.log('ورود موفقیت آمیز');
                 this.$router.push('/user');
                 this.$root.$loading.finish();
             } catch (e) {
                 console.log(e);
-                this.$error('خطا هنگام ورود!');
+                // this.$error('خطا هنگام ورود!');
             }
         },
         async register() {

@@ -33,9 +33,11 @@
   import UserMenu from '~/components/UserPage/UserMenu.vue';
   import { mapGetters } from'vuex';
   export default {
+    middleware: ['auth'],
+
      async fetch({store, params}) {
-        const userID = 1; //for now
-        await store.dispatch('user/getUserData', userID);
+        // const userID = 1; //for now
+        // await store.dispatch('user/getUserData', userID);
     },
     data() {
       return {

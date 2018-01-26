@@ -62,7 +62,8 @@ module.exports = {
     //   css: false
     // }],
   ],
-  // axios: {
-  //   // proxyHeaders: false
-  // }
+  axios: {
+    // proxyHeaders: false
+    baseURL: "http://localhost:3000/api"
+  }
 }

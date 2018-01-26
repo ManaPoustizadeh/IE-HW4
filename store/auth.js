@@ -10,6 +10,7 @@ export default {
         SET_USER(state, user) {
             state.loggedIn = !!user
             state.user = user
+            // console.log(state.user);
         },
 
         SET_TOKEN(state, token) {
@@ -39,7 +40,7 @@ export default {
         async logout(ctx, { $axios }) {
             // commit('SET_USER', null);
             let endpoint = '/auth/logout';
-            if (appendToken) endpoint = endpoint + `/${ctx.state.token}`
+            // if (appendToken) endpoint = endpoint + `/${ctx.state.token}`
            ctx.commit('SET_USER', null)
 
             let appendToken = false;

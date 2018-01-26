@@ -14,7 +14,7 @@
                 <carousel :perPage="5" paginationActiveColor="#42b983" paginationColor="#b2ebd1" :navigationEnabled="true">
                     <slide v-for="movie in movies" :key="movie.id">
                         <film-card  
-                                :id="movie.id"
+                                :id="movie._id"
                                 :name="movie.title"
                                 :genres="movie.genres"
                                 :quality="movie.quality"

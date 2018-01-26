@@ -12,7 +12,6 @@
         <i class="fa fa-bell" aria-hidden="true"></i>
       </b-button>
 
-      <user-register></user-register>
 
       <b-collapse is-nav id="nav_collapse">
 
@@ -40,17 +39,11 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import UserRegister from '~/components/UserRegister';
-  export default {
-    components: {
-      UserRegister,
-=======
+
   import UserLogin from '~/components/UserLogin';
   export default {
     components: {
       UserLogin,
->>>>>>> 64a3fa9c84d44dec959fcbecfa50797ec3c6ef4d
     }
   };
 

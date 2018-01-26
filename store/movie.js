@@ -66,10 +66,10 @@ export const actions = {
         const url = baseURL+movieID;
         try {
             // console.log('in get movie');
-            const data = await this.$axios.$get(url);
+            const data = await this.$axios.$get(`/movie/${movieID}/details`);
             // console.log(data);
             commit('SET_LOCAL_MOVIE_DATA', data);
-            const imdbUrl = imdbBaseUrl+data.imdbID;
+            const imdbUrl = imdbBaseUrl+data.imdbId;
             var imdbData =  await this.$axios.$get(imdbUrl);
             const TitleTranslate = await this.$axios.$get(translateUrl+imdbData.Title+"&text="+imdbData.Plot+"&lang=fa");
             imdbData.TranslatedTitle = TitleTranslate.text[0];

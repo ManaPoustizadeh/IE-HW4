@@ -1,9 +1,9 @@
 export default async function ({ store, redirect, error, app }) {
 
-    await store.dispatch('auth/FETCH', app) //step 1
+    await store.dispatch('user/FETCH', app) //step 1
 
     // If user not loggedIn, redirect to /login
-    if (!store.state.auth.loggedIn) {
+    if (!store.state.user.loggedIn) {
         return redirect('/login');
     }
     
