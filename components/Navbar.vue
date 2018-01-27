@@ -86,7 +86,7 @@
       },
 
       search() {
-          this.$store.dispatch('movie/search', this.searchQuery);
+          // this.$store.dispatch('movie/search', this.searchQuery);
           this.$router.push(`/search/${this.searchQuery}`);
       }
     }
