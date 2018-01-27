@@ -41,13 +41,11 @@
         <b-card class="rounded">
           <b-form-textarea type="text" v-model="text" :rows="3" :max-rows="6" class="border-0 input"></b-form-textarea>
           <b-form-group>
-            <b-form-checkbox name="no-opinion">نظری ندارم</b-form-checkbox>
-            <b-form-checkbox name="no-opinion">پیشنهاد نمی‌کنم</b-form-checkbox>
-            <b-form-checkbox name="no-opinion">پیشنهاد می‌کنم</b-form-checkbox>
+            <b-form-checkbox v-model="recommend" name="no-opinion">پیشنهاد می‌کنم</b-form-checkbox>
           </b-form-group>
         </b-card>
         <div class="text-left">
-          <b-button class="green my-3">ثبت دیدگاه</b-button>
+          <b-button @click="submitComment" class="green my-3">ثبت دیدگاه</b-button>
         </div>
       </div>
     </div>
@@ -72,6 +70,19 @@ import RangeSlider from 'vue-range-slider'
         text: '',
         date: '',
         recommend: true,
+      }
+    },
+    methods: {
+     submitComment() {
+        this.$emit('submitComment', {
+          directorScore: this.directorScore,
+          writingScore: this.writingScore,
+          actingScore: this.actingScore,
+          comment: this.text,
+          recommend: this.recommend,
+          author: this.userName || 'ناشناس',
+          avatar: this.userAvatar || 'https://www.drupal.org/files/issues/default-avatar.png',
+        })
       }
     },
     props: {

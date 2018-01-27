@@ -1,5 +1,5 @@
 <template>
-  <b-modal id="loginModal" hide-footer>
+  <b-modal id="loginModal" hide-footer ref="loginModal">
         <div class="d-flex w-100 justify-content-center">
             <div id="loginTabButton" 
                  @click="() => activeTab='login'" 
@@ -91,9 +91,10 @@ export default {
                 let fields = { username: this.username, password: this.password };
                 let { token } = (await this.$axios.post("auth/login", fields)).data;
 
-                this.$store.commit('auth/SET_TOKEN', token);
-                this.$store.dispatch('auth/FETCH', this);
+                this.$store.commit('user/SET_TOKEN', token, this.remember);
+                this.$store.dispatch('user/FETCH', this);
                 console.log('ورود موفقیت آمیز');
+                this.$refs.loginModal.hide();
                 this.$router.push('/user');
                 this.$root.$loading.finish();
             } catch (e) {
@@ -104,20 +105,21 @@ export default {
         async register() {
             try {
                 let registerFields = {
-                    username: this.username, 
+                    username: this.email, 
                     password: this.password,
                     email: this.email,
                 }
                 await this.$axios.post('register', registerFields);
-                let fields = { username: this.username, password: this.password };
+                let fields = { username: this.email, password: this.password };
                 let { token } = (await this.$axios.post("auth/login", fields)).data;
 
-                this.$store.commit('auth/SET_TOKEN', token);
+                this.$store.commit('user/SET_TOKEN', token);
 
-                this.$success('ثبت نام با موفقیت انجام شد')
+                // this.$success('ثبت نام با موفقیت انجام شد');
+                this.$refs.loginModal.hide();
                 this.$router.push('/user');
             } catch (error) {
-                this.$error('خطا در هنگام ثبت نام')
+                // this.$error('خطا در هنگام ثبت نام')
                 console.log('Problem registering')
             }
         },

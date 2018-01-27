@@ -29,6 +29,8 @@
 
 <script>
 export default {
+    middleware: ['auth', 'admin'],
+
     data() {
         return {
             title: '',
@@ -79,6 +81,7 @@ export default {
             try {
                 let res = await this.$axios.post('/submit', {movie});
                 console.log('happy');
+                this.$router.go('/admin');
             } catch (error) {
                 console.log(error);
             }

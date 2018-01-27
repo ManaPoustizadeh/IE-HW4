@@ -30,7 +30,7 @@
           </b-progress>
         </div>
     </div>
-    <img class="d-block my-3 my-md-0 rounded-circle" height="80px" :src="userAvatar" />
+    <img class="d-block my-3 my-md-0 rounded-circle" height="80px" :alt="author" :src="userAvatar" />
     <div class="col-sm-6">
         <b-card class="rounded pb-3">
           <div class="d-flex align-items-center mb-2">
@@ -58,6 +58,9 @@
 <script>
 export default {
     props: {
+        author: {
+          type: String,
+        },
         directorScore: {
             type: Number,
         },
@@ -74,7 +77,7 @@ export default {
             type: String,
         },
         date: {
-            type: String,
+            type: Date,
         },
         text: {
             type: String,

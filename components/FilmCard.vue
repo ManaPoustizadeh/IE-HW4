@@ -8,7 +8,12 @@
         <div class="container film-container">
             <img :src="thumbnail" alt="" height="220px" class="thumbnail w-100">
             <div class="d-flex w-100 justify-content-center align-items-center mt-2">
-                <span v-for="genre in genres" :key="genre" class="badge badge-light p-1 w-100">{{genre}}</span>
+                <span v-for="(genre, index) in genres" 
+                      :key="genre"
+                      :class="index != genres.length-1 ? 'mr-1': ''" 
+                      class="badge badge-light p-1 w-100">
+                      {{genre}}
+                </span>
             </div>
             <div class="d-flex w-100 justify-content-center align-items-center mt-2">
                 <span class="badge p-1 w-100 film-rate rounded">

@@ -34,7 +34,8 @@ const state = () => ({
             actorshipScore: 0,
             writingScore: 0,
         }
-    ]
+    ],
+    searchResults: [],
 });
 
 export const mutations = {
@@ -53,9 +54,27 @@ export const mutations = {
                 state[field] = localMovieData[field];
             } 
         } 
+        state.comments = localMovieData.comments;
     },
     SET_MOVIE_COMMENTS(state, commentsData) {
-        state.comments = commentsData;
+        if(!commentsData)
+            state.comments = [
+                {
+                    user: '',
+                    date: '',
+                    positive: true,
+                    upVotesForThisComment: 0,
+                    downVotesForThisComment: 0,
+                    directorshipScore: 0,
+                    actorshipScore: 0,
+                    writingScore: 0,
+                }
+            ];
+        else
+            state.comments = commentsData;
+    }, 
+    SET_RESULT_MOVIES(state, results) {
+        state.searchResults = Object.assign({}, results);
     }
 }  
 const baseURL = "http://localhost:3001/movies/";
@@ -82,17 +101,27 @@ export const actions = {
     },
 
     async getComments({commit}, movieID) {
-        const url = baseURL+movieID+'/comments';
+        const url = `/movie/${movieID}/comments`;
         try {
             console.log('in get comments');
             const data = await this.$axios.$get(url);
-            console.log(data);
+            // console.log(data);
             commit('SET_MOVIE_COMMENTS', data);
         } catch (error) {
             console.log(error);
         }
-    }
+    },
 
+    async search({commit}, query) {
+        const url = '/search?q=' + query;
+        try {
+            const results = await this.$axios.$get(url);
+            console.log(results);
+            commit('SET_RESULT_MOVIES', results);
+        } catch (error) {
+            console.log(error);
+        }  
+    }
     // async commentUpvote({commit}, movieID, commentID, newComment) {
     //     const url = baseURL+movieID+'/comments'
     // }
@@ -106,5 +135,9 @@ export const getters = {
 
     comments(state) {
         return state.comments;
-    }
+    },
+
+    searchResults(state) {
+        return state.searchResults;
+    },
 }

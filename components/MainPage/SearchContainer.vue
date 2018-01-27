@@ -14,10 +14,10 @@
                 <b-button class="rounded-circle border-0 gas ml-2 text-white zoom-button">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </b-button>
-                <search-input searchInput="جستجوی فلان بیسار"></search-input>
+                <search-input @input="changeSearchQuery" @enter="search" searchInput="جستجوی فلان بیسار"></search-input>
             </div>
             <!-- and heres the main search button -->
-            <b-button class="border-0 p-1 pl-5 pr-5 bg-warning pull-left">جستجو</b-button>
+            <b-button @click="search(searchQuery)" class="border-0 p-1 pl-5 pr-5 bg-warning pull-left">جستجو</b-button>
         </div>
     </div>
 </template>
@@ -29,7 +29,7 @@ import Footer from '~/components/Footer.vue';
 export default {
     data() {
         return {
-
+            searchQuery: '',
         }
     },
     props: {
@@ -39,6 +39,16 @@ export default {
       img: {
         type: String,
       }
+    },
+
+    methods: {
+        changeSearchQuery(query) {
+          this.searchQuery = query;
+        },
+        search(query) {
+          this.$store.dispatch('movie/search', query);
+          this.$router.push(`/search/${query}`);
+        }
     },
 
     components: {

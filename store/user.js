@@ -26,7 +26,10 @@ import Cookies from 'js-cookie'
 
 export const getters = {
     user(state) {
-        return state;
+        return state.user;
+    },
+    loggedIn(state) {
+        return state.loggedIn;
     }
 }
 
@@ -49,16 +52,17 @@ export const mutations =  {
     SET_USER(state, user) {
         state.loggedIn = !!user
         state.user = user;
-        console.log(state.user);
+        // console.log(state.user);
     },
 
-    SET_TOKEN(state, token) {
+    SET_TOKEN(state, token, remember) {
         state.token = token;
 
         if( !token )
             return Cookies.remove('token')
 
-        Cookies.set('token', token, {expires: 1/48})
+        let expires = remember ? -1 : 1/90;
+        Cookies.set('token', token, {expires: expires})
     },
 }
 
@@ -79,7 +83,7 @@ export const actions = {
     async logout(ctx, { $axios }) {
         // commit('SET_USER', null);
         let endpoint = '/auth/logout';
-        if (appendToken) endpoint = endpoint + `/${ctx.state.token}`
+        // if (appendToken) endpoint = endpoint + `/${ctx.state.token}`
         ctx.commit('SET_USER', null)
 
         let appendToken = false;

@@ -4,7 +4,7 @@ export default async function ({ store, redirect, error, app }) {
 
     // If user not loggedIn, redirect to /login
     if (!store.state.user.loggedIn) {
-        return redirect('/login');
+        return redirect('/');
     }
     
     // if (store.state.auth.user.roles.indexOf("admin") === -1) {

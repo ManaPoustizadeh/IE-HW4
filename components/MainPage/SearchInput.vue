@@ -1,6 +1,6 @@
 <template>
     <div class="col-8 p-0">
-        <b-input class="w-100 ph-font" :placeholder="searchInput"></b-input>
+        <b-form-input class="w-100 ph-font" @keypress.enter.native="enter"  v-model="query" @input="input" :placeholder="searchInput"></b-form-input>
     </div>
 </template>
 
@@ -8,7 +8,17 @@
 export default {
     data() {
         return {
+            query: '',
+        }
+    },
 
+    methods: {
+        input(e) {
+            this.$emit('input', this.query);
+        },
+        enter() {
+            console.log('hihihi');
+            this.$emit('enter', this.query);
         }
     },
 

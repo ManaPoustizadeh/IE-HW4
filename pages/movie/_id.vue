@@ -89,19 +89,20 @@
                     :resolutions="movieData.resolutions"  
         ></download-tab>
         <div v-if="activeTab.comments == 'active'">
-            <editable-comment :userName="userData.username" :userAvatar="userData.avatar"></editable-comment>
-            <comment v-for="comment in movieData.comments"
+            <editable-comment v-if="userData" @submitComment="submitComment" :userName="userData.username || ''" :userAvatar="userData.avatar || ''"></editable-comment>
+            <comment v-for="comment in comments"
                     :key="comment.id"
-                    :directorScore="comment.directorshipScore"
+                    :directorScore="comment.directorScore"
                     :writingScore="comment.writingScore"
-                    :actingScore="comment.actorshipScore"
+                    :actingScore="comment.actingScore"
                     :userName="comment.username"
-                    :text="comment.text"
+                    :author="comment.author"
+                    :text="comment.comment"
                     :userAvatar="comment.avatar"
-                    :upVoteCount="comment.upVotesForThisComment"
-                    :date="comment.date"
-                    :recommend="comment.positive ? 'فیلم را پیشنهاد میکنم' : 'فیلم را پیشنهاد نمی‌کنم'"
-                    :downVoteCount="comment.downVotesForThisComment"></comment>
+                    :upVoteCount="comment.upVoteCount"
+                    :date="new Date(comment.created_at)"
+                    :recommend="comment.recommend ? 'فیلم را پیشنهاد میکنم' : 'فیلم را پیشنهاد نمی‌کنم'"
+                    :downVoteCount="comment.downVoteCount"></comment>
         </div>
         <div v-if="activeTab.sub == 'active'" id="sub" class="card d-flex justify-content-center align-items-center w-100 m-2 p-5 bg-light">
             هیچ زیرنویسی موجود نیست
@@ -133,14 +134,15 @@ import DownloadTab from '~/components/MoviePage/DownloadTab.vue';
 
 import { mapGetters } from'vuex';
 export default {
+    middleware: ['loggedIn'],
     async fetch({store, params}) {
         const movieID = params.id;
         if(movieID != 'bootstrap.css.map'){
             await store.dispatch('movie/getMovieData', movieID);
             await store.dispatch('movie/getComments', movieID);
         }
-        const userID = 1; //for now
-        await store.dispatch('user/getUserData', userID);
+        // const userID = 1; //for now
+        // await store.dispatch('user/getUserData', userID);
     },
     methods: {
         selectTab(tabName) {
@@ -150,7 +152,18 @@ export default {
                 }
             }
             this.activeTab[tabName] = 'active'; 
-        }
+        },
+
+        async submitComment(commentData) {
+            let id = this.movieData._id;
+            try {
+                console.log(commentData);
+                let result = this.$axios.post(`/movie/${id}/comments`, commentData);
+                this.$router.go(`/movie/${id}`);
+            } catch (error) {
+                console.log(error);
+            }
+        }   
     },
     data() {
         let activeTab = {
